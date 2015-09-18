@@ -56,7 +56,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'forum.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost/django-security-forum')
+    'default': dj_database_url.config(
+        default='sqlite:///{}/test.db'.format(BASE_DIR)
+    )
 }
 
 LANGUAGE_CODE = 'en-gb'
